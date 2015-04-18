@@ -15,7 +15,6 @@ def mittelwert(array)
   summe(array) / array.length
 end
 
-
 def arrays_multiplizieren(array1,array2)
   i = 0
   ergebnis = []
@@ -30,5 +29,20 @@ def arrays_multiplizieren(array1,array2)
   ergebnis
 end
 
-b = (summe(arrays_multiplizieren(x, y)) - x.length*mittelwert(x)*mittelwert(y)) / ( summe(quadrieren(x)) - x.length * mittelwert(x) * mittelwert(x))
-puts b
+class Regression
+  def initialize(x, y)
+    @x = x
+    @y = y
+  end
+
+  def lineare_regressionsanalyse
+    b = (summe(arrays_multiplizieren(@x, @y)) - @x.length*mittelwert(@x)*mittelwert(@y)) / ( summe(quadrieren(@x)) - @x.length * mittelwert(@x) * mittelwert(@x))
+    a = mittelwert(@y) - b*mittelwert(@x)
+    [a, b]
+  end
+end
+
+
+
+
+puts Regression.new(x, y).lineare_regressionsanalyse
