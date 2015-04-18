@@ -43,7 +43,4 @@ class Regression
   end
 end
 
-
-
-
 puts Regression.new(x, y).lineare_regressionsanalyse
