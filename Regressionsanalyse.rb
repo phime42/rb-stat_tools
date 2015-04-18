@@ -1,6 +1,10 @@
+#!/usr/bin/ruby
+
 x = [2.9, 4.1, 4.9, 5.0, 4.4, 3.1, 3.9, 3.7]
 y = [6, 9, 8, 7, 6, 7, 8, 5]
 
+##
+# performs a linear regression analysis
 class Regression
   def initialize(x, y)
     @x = x
@@ -25,7 +29,7 @@ class Regression
       i = 0
       ergebnis = []
       if !array1.length == array2.length
-        puts 'unterschiedlich lange messreihen, du lappen'
+        puts 'arrays do not have the same length'
         return
       end
 
